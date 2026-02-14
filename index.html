@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Princess, Linda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --romantic-red: #d62828;
+            --soft-pink: #f7cad0;
+            --deep-rose: #9d0208;
+            --gold: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0b0101;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- Animated Background Elements --- */
+        .bg-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating {
+            position: absolute;
+            animation: float 15s infinite linear;
+            opacity: 0.6;
+            font-size: 2rem;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(110vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+            }
+        }
+
+        /* --- Sections --- */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* --- Intro Section --- */
+        #intro {
+            background: radial-gradient(circle, #4a0000 0%, #0b0101 100%);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--soft-pink);
+            text-shadow: 0 0 20px var(--romantic-red);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* --- Photo Styling --- */
+        .photo-frame {
+            border: 4px solid var(--gold);
+            padding: 10px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05);
+        }
+
+        .baby-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .destiny-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 3px solid var(--gold);
+            line-height: 1.8;
+        }
+
+        /* --- Rose Section --- */
+        .rose-img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--romantic-red);
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(214, 40, 40, 0.5);
+        }
+
+        /* --- The Main Letter --- */
+        .letter-content {
+            text-align: left;
+            white-space: pre-line;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            background: rgba(157, 2, 8, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+            line-height: 1.8;
+        }
+
+        .lang-highlight {
+            color: var(--soft-pink);
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 40px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--gold);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .destiny-text {
+                font-size: 1.1rem;
+            }
+
+            .rose-img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .baby-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .letter-content {
+                padding: 20px;
+                font-size: 1rem;
+            }
+
+            .destiny-text {
+                font-size: 1rem;
+                padding: 20px;
+            }
+
+            .rose-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            footer {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* --- Scroll Behavior --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- Link Styling --- */
+        a {
+            color: var(--soft-pink);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-elements" id="bg"></div>
+
+    <section id="intro">
+        <div class="container">
+            <h1>Will you be my Valentine? 🌹💍❤️</h1>
+            <p style="font-size: 1.5rem; color: var(--soft-pink);">For my one and only, Linda</p>
+        </div>
+    </section>
+
+    <section id="destiny">
+        <div class="container">
+            <div class="baby-grid">
+                <img src="her-baby.jpg" alt="Linda Baby" class="photo-frame">
+                <img src="me-baby.jpg" alt="Me Baby" class="photo-frame">
+            </div>
+            <div class="destiny-text">
+                "Before the world taught us how to love, before we knew the weight of distance, and before our voices ever met through a phone... there was a plan.<br><br>
+                Look at these two faces. Two different lives, born in different places, growing up under different stars. Yet, looking back now, I see it so clearly. My soul was already leaning toward yours. Every step I took as a boy, every dream I had, was leading me down a path that ended at your feet.<br><br>
+                You weren't just a coincidence, Linda. You were a promise made by the universe. I look at your baby picture and I see the princess I was born to protect. I look at mine and I see the man who was destined to become your husband. We were two halves of a story that hadn't been written yet—a story of 'Mi Corazón,' 'Ma Chérie,' and 'حبيبتي.'<br><br>
+                Even then, my heart was yours. It just took time for the rest of me to find you. Now that I have, I'm never letting go. From those innocent eyes to the woman who drives me insane with desire today—it has always, and will always, be you."
+            </div>
+        </div>
+    </section>
+
+    <section id="promise">
+        <div class="container">
+            <img src="rose.jpg" alt="The Rose" class="rose-img">
+            <div class="destiny-text">
+                "In a world of digital messages and distant dreams, there are moments that feel real enough to touch. This rose is one of them.<br><br>
+                I remember that random night when you asked me for a real rose. It was a simple request, but to me, it was a mission. I promised you I'd find one, and when I saw this bloom, I knew it was meant for you. It wasn't just a flower; it was a physical piece of the beauty I see in you every day.<br><br>
+                You know how much I love to draw for you on Instagram—sketching roses just to see you smile. But this one... this one was nature's way of helping me show you what I feel. Every petal carries that promise I made to you. It represents the care, the attention, and the reality of my love that exists outside of any screen.<br><br>
+                Linda, I will keep drawing for you, I will keep finding beauty for you, and one day, I won't just be sending you pictures. I'll be handing you a fresh bouquet in person, feeling your hand in mine as we walk together. Until then, let this rose remind you that even when I'm not there, I am always looking for ways to bring a little more beauty into your world."
+            </div>
+        </div>
+    </section>
+
+    <section id="vision">
+        <div class="container">
+            <img src="together.png" alt="Together" class="photo-frame" style="margin-bottom: 30px; max-width: 80%;">
+            <div class="destiny-text">
+                "They say distance is measured in miles, but looking at us, I know it's measured in heartbeats.<br><br>
+                Even though this image was created to bring us together, it feels more real to me than anything else. Because when I look at our hands forming that heart, I don't see pixels—I see the soul of us. I see the 'us' that exists in every late-night call, every shared silence, and every 'I love you' whispered across the ocean.<br><br>
+                This is more than just a picture; it is a vision of our future. It's a glimpse of the day when there won't be a screen between us, when I won't have to imagine the warmth of your skin or the way your heart feels against mine.<br><br>
+                You are my anchor in the storm and my light in the dark. Our hearts have already become one, beating in a rhythm that the world can't understand. This heart we make together is the home I've been looking for my entire life.<br><br>
+                Linda, you are the masterpiece I never thought I'd be lucky enough to hold. No matter how many miles separate us today, this image is our truth: You and me, side by side, forever. My wife, my princess, my everything."
+            </div>
+        </div>
+    </section>
+
+    <section id="final-letter">
+        <div class="container">
+            <div class="letter-content">
+My wife… my princess…
+Linda, from the moment you came into my life, something inside me changed. You are not just a woman behind a screen. You are my peace. You are my comfort. You are the one I choose every single day.
+
+You are so gorgeous, and I don't just mean your face. I mean the way your eyes shine when you talk. The way your smile softens my heart. The way your presence makes me feel like the luckiest man alive.
+
+But what makes you even more beautiful is how lovely you are… how you carry me, how you care about me, how you check on me, how you make sure I'm okay. You don't just love me — you protect my heart.
+
+My favorite memory with you will always be when we call each other… and fall asleep together. No noise. No stress. Just your breathing on the phone. Just knowing you're there. That calm feeling… that safe feeling… that's love. That's real.
+
+Even through distance, you feel close. Even through a phone, you feel like home.
+
+<span class="lang-highlight">Mi esposa… mamacita… mi vida… mi corazón… mi amor… te amo mucho.</span>
+Eres la mujer de mis sueños. Cuando escucho tu voz, mi corazón late más fuerte. Cuando dices mi nombre, me vuelvo loco por ti.
+
+<span class="lang-highlight">Ma femme… je t'aime ma chérie.</span>
+Tu es mon amour, mon bonheur, mon avenir. Quand je pense à toi, je souris comme un homme amoureux pour la première fois.
+
+<span class="lang-highlight">زوجتي… حبيبتي… عمري… أحبك. أموت فيك.</span>
+وجودك في حياتي نعمة من ربّي، وأنتِ سعادتي وراحتي وأغلى ما عندي.
+
+You are my wife in my heart. My princess. The woman I want beside me when I wake up. The one I want to hold at night — not through a phone — but for real, in my arms.
+
+And since it's Valentine's Day… let me tell you something more…
+
+If I were with you right now, it wouldn't stop at kisses.
+I would pull you against me firmly�� feeling your body press into mine… letting you feel exactly how much I want you. Not gently this time — but with intention. With heat.
+I would whisper in your ear, low and slow,
+"Mi esposa… mamacita… you drive me insane."
+My hands wouldn't just hold you — they would grip you. Explore you. Claim you.
+Slow at first… teasing you… making you wait… making your breath change…
+I'd kiss you deeper… harder… not polite kisses — but the kind that make you forget everything else.
+I would look into your eyes and let you see it — that hunger. That fire. That need.
+Because with you, it's not just love.
+It's desire that builds and builds until it's almost too much.
+
+I imagine lifting you… feeling your legs wrap around me… your fingers in my hair… your voice getting softer… weaker… because you feel what I'm doing to you.
+I imagine making you melt under me… slowly… patiently… taking my time… enjoying every reaction you give me.
+And when you whisper my name…
+When you look at me with that mix of love and heat…
+I'd remind you softly,
+"You're my wife… my princess… and tonight… you're mine."
+
+Not rushed. Not careless.
+But deep. Intense. Passionate.
+The kind of connection that leaves you breathless…
+The kind that makes you feel wanted… desired… worshipped…
+Until you can't think anymore — only feel.
+
+And one day… when there's no distance between us…
+I won't just imagine it.
+I'll show you exactly how much fire I've been holding inside for you.
+            </div>
+            <footer>Forever Yours... ❤️</footer>
+        </div>
+    </section>
+
+    <script>
+        // Generate floating background items
+        const bg = document.getElementById('bg');
+        const items = ['❤️', '🌹', '💍', '🍫', '💋', '✨'];
+        
+        for (let i = 0; i < 30; i++) {
+            const el = document.createElement('div');
+            el.className = 'floating';
+            el.textContent = items[Math.floor(Math.random() * items.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.animationDelay = Math.random() * 15 + 's';
+            el.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            bg.appendChild(el);
+        }
+    </script>
+</body>
+</html>
